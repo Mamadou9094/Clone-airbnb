@@ -1,10 +1,11 @@
-const { request } = require('express')
-const express = require('express')
-const router = express.Router()
+const { request } = require("express");
+const express = require("express");
+const router = express.Router();
+const userController = require("../controllers/userController");
 
+router.get("/", (req, res) => {
+  res.json({ message: "bienvenue dans la galere" });
+});
+router.post("/signup", userController.signup);
 
-router.get('/user', (req, res)=>{
-    res.json({message: 'bienvenue dans la galere'})
-})
-
-module.exports = router
+module.exports = router;
